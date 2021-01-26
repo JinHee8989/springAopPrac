@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/api")
 public class BoardController {
 
-    @LogExecutionTime
+//    @LogExecutionTime
     @GetMapping(value = "/knock")
-    public String visit(){
+    public String getKnock(){
 
         String knock = "똑똑";
         System.out.println("knock = " + knock);

@@ -15,9 +15,15 @@ configurations {
     }
 }
 
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'//스프링부트의 의존성들을 관리해주는 플러그인임
+
 repositories {
     mavenCentral()
 }
+
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
@@ -26,6 +32,7 @@ dependencies {
 //    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
 //    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    compile('com.h2database:h2')
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
@@ -33,6 +40,10 @@ dependencies {
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    testImplementation 'org.springframework.security:spring-security-test'
+
+    // JPA - H2, Derby, Hsqldb
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile('org.springframework.session:spring-session-jdbc')
 }
 
 test {

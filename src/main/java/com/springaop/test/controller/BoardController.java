@@ -15,6 +15,7 @@ public class BoardController {
 
         String knock = "똑똑";
         System.out.println("knock = " + knock);
+
         return knock;
     }
 
